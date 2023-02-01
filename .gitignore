@@ -1,0 +1,12 @@
+# Node stuff
+package-lock.json
+
+# package directories
+node_modules
+
+# Istanbul code coverage output
+coverage
+.nyc_output
+
+# vi swap files
+.*.sw[pon]

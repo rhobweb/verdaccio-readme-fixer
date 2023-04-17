@@ -23,8 +23,8 @@ The package.json file is updated with the README text.
 <br>If successful, the console output should look something like:
 
 <pre>
-Backup file created: /tmp/tmp-opt-modules-@rhobweb-js-verdaccio-readme-fixer-package-json.73543
-File created: /opt/modules/@rhobweb.js/verdaccio-readme-fixer/package.json
+Backup file created: /tmp/tmp-opt-modules-@rhoweb-js-verdaccio-readme-fixer-package-json.73543
+File created: /opt/modules/@rhoweb.js/verdaccio-readme-fixer/package.json
 </pre>
 
 # Example Link for Testing

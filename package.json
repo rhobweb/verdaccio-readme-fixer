@@ -1,19 +1,25 @@
 {
   "name": "@rhoweb.js/verdaccio-readme-fixer",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "author": {
     "name": "Rhob Weber"
   },
   "description": "Generate a Verdaccio README.md file with internal links",
-  "dependencies": {},
   "devDependencies": {
-    "@babel/eslint-parser": "^7.15.8",
-    "@babel/plugin-syntax-class-properties": "^7.12.13"
+    "@babel/eslint-parser": "^7.21.3",
+    "@babel/plugin-syntax-class-properties": "^7.12.13",
+    "chai": "^4.3.7",
+    "rewire": "^6.0.0",
+    "sinon": "^15.0.3"
   },
   "license": "ISC",
-  "main": "index.js",
+  "main": "src/index.js",
   "maintainer": "Rhob Weber",
-  "scripts": {},
+  "scripts": {
+    "start":         "node src/index.js",
+    "test-unit":     "mocha -u bdd --timeout 999999 --colors ./test/unit/**/*.spec.js",
+    "test-coverage": "nyc mocha -u bdd --timeout 999999 --colors ./test/unit/**/*.spec.js"
+  },
   "babel": {
     "plugins": [
       "@babel/plugin-syntax-class-properties"
@@ -22,5 +28,5 @@
   "publishConfig": {
     "registry": "http://localhost:4873"
   },
-  "readme": "# Overview\n\nThe module formats internal hyperlinks for this page so that they work under Verdaccio.\n<br>Verdaccio puts the README.md contents into the package.json as a \"readme\" property.\n<br>This module fixes the internal hyperlinks and updates the package.json \"readme\" property.\n\n# Usage\n\n<pre>node this_module_path/readme-fixer.js [readmeFile]</pre>\n\nWhere:\n  - [readmeFile] : is the pathname of the markdown file to process. If not specified, defaults to \"README.md\" in the current directory.\n\n# README.md file\n\nInternal hyperlinks such as the following are converted to internal hyperlinks on the Verdaccio Web UI page:\n\n<pre>[Example Link for Testing](#example-link-for-testing)</pre>\n\n# Output\n\nThe package.json file is updated with the README text.\n<br>If successful, the console output should look something like:\n\n<pre>\nBackup file created: /tmp/tmp-opt-modules-@rhobweb-js-verdaccio-readme-fixer-package-json.73543\nFile created: /opt/modules/@rhobweb.js/verdaccio-readme-fixer/package.json\n</pre>\n\n# Example Link for Testing\n\n[README.md file](http://localhost:4873/-/web/detail/@rhobweb.js/verdaccio-readme-fixer?#readmemd-file)\n"
+  "readme": "# Overview\n\nThe module formats internal hyperlinks for this page so that they work under Verdaccio.\n<br>Verdaccio puts the README.md contents into the package.json as a \"readme\" property.\n<br>This module fixes the internal hyperlinks and updates the package.json \"readme\" property.\n<br>Must be run from the directory containing the package.json file to be updated.\n\n# Usage\n\n<pre>node <i>this_module_path</i> [readmeFile]</pre>\n\n<pre>node ./@rhoweb.js/verdaccio-readme-fixer ./README.md</pre>\n\n\nWhere:\n  - [readmeFile] : is the pathname of the markdown file to process. If not specified or does not have a '.md' extension, defaults to \"README.md\" in the current directory.\n\n# README.md file\n\nInternal hyperlinks such as the following are converted to internal hyperlinks on the Verdaccio Web UI page:\n\n<pre>[Example Link for Testing](#example-link-for-testing)</pre>\n\n# Output\n\nThe package.json file is updated with the README text.\n<br>If successful, the console output should look something like:\n\n<pre>\nBackup package file created: /tmp/tmp-opt-modules-@rhoweb-js-verdaccio-readme-fixer-package-json.73543\nPackage file readme updated: /opt/modules/@rhoweb.js/verdaccio-readme-fixer/package.json\n</pre>\n\n# Example Link for Testing\n\n[README.md file](http://localhost:4873/-/web/detail/@rhoweb.js/verdaccio-readme-fixer?#readmemd-file)\n"
 }

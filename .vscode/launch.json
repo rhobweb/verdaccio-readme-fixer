@@ -62,8 +62,6 @@
         "eslint",
         "${workspaceFolder}/src/*.js",
       ],
-      "env": {
-      },
       "outputCapture": "std"
     }
   ]
